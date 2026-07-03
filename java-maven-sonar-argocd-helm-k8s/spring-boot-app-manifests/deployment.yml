@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: ruzzel06/maven-docker-agent:replaceImageTag
+        image: ruzzel06/jenkins-project-v:replaceImageTag
         ports:
         - containerPort: 8080
