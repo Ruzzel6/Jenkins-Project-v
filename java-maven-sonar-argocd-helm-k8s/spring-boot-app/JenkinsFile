@@ -46,30 +46,6 @@ pipeline {
         }
       }
     }
-stage('Debug') {
-    steps {
-        sh '''
-        echo "Current Directory:"
-        pwd
-
-        echo
-        echo "Workspace:"
-        echo $WORKSPACE
-
-        echo
-        echo "Files:"
-        ls -la
-
-        echo
-        echo "Git:"
-        git rev-parse --show-toplevel || true
-
-        echo
-        echo "Git status:"
-        git status || true
-        '''
-    }
-}
     stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "Jenkins-Project-v"
