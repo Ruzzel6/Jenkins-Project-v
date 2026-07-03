@@ -78,6 +78,7 @@ stage('Debug') {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
+                    git config --global --add safe.directory ${WORKSPACE}
                     git config user.email "ruzzel6@gmail.com"
                     git config user.name "ruzzel6"
                     BUILD_NUMBER=${BUILD_NUMBER}
